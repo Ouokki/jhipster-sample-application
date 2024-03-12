@@ -1,0 +1,26 @@
+{
+  "annotations": {
+    "changelogDate": "20240312105716"
+  },
+  "applications": "*",
+  "entityTableName": "option_produit_commerces",
+  "fields": [],
+  "name": "OptionProduitCommerces",
+  "relationships": [
+    {
+      "otherEntityName": "tarifReferenceOption",
+      "otherEntityRelationshipName": "optionProduitCommerces",
+      "relationshipName": "tarifReferenceOption",
+      "relationshipSide": "left",
+      "relationshipType": "one-to-one"
+    },
+    {
+      "otherEntityName": "parametrage",
+      "otherEntityRelationshipName": "optionProduitCommerces",
+      "relationshipName": "parametrage",
+      "relationshipSide": "right",
+      "relationshipType": "many-to-one"
+    }
+  ],
+  "searchEngine": "no"
+}

@@ -1,0 +1,32 @@
+{
+  "annotations": {
+    "changelogDate": "20240312104416"
+  },
+  "applications": "*",
+  "entityTableName": "hist_modif_demande",
+  "fields": [
+    {
+      "fieldName": "dateModification",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "typeModification",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "detailsModifications",
+      "fieldType": "String"
+    }
+  ],
+  "name": "HistModifDemande",
+  "relationships": [
+    {
+      "otherEntityName": "demande",
+      "otherEntityRelationshipName": "histModifDemande",
+      "relationshipName": "demande",
+      "relationshipSide": "right",
+      "relationshipType": "many-to-one"
+    }
+  ],
+  "searchEngine": "no"
+}

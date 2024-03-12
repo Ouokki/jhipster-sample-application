@@ -1,0 +1,29 @@
+{
+  "jhipsterSampleApplicationApp": {
+    "parametrage": {
+      "home": {
+        "title": "Parametrages",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Parametrage",
+        "createOrEditLabel": "Create or edit a Parametrage",
+        "notFound": "No Parametrages found"
+      },
+      "created": "A new Parametrage is created with identifier {{ param }}",
+      "updated": "A Parametrage is updated with identifier {{ param }}",
+      "deleted": "A Parametrage is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Parametrage {{ id }}?"
+      },
+      "detail": {
+        "title": "Parametrage"
+      },
+      "id": "ID",
+      "garantie": "Garantie",
+      "demande": "Demande",
+      "tarifCommercant": "Tarif Commercant",
+      "optionProduitCommerces": "Option Produit Commerces",
+      "conformite": "Conformite",
+      "offreProduit": "Offre Produit"
+    }
+  }
+}

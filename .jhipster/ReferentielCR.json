@@ -1,0 +1,28 @@
+{
+  "annotations": {
+    "changelogDate": "20240312104216"
+  },
+  "applications": "*",
+  "entityTableName": "referentiel_cr",
+  "fields": [
+    {
+      "fieldName": "nomCR",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "numeroCR",
+      "fieldType": "String"
+    }
+  ],
+  "name": "ReferentielCR",
+  "relationships": [
+    {
+      "otherEntityName": "cR",
+      "otherEntityRelationshipName": "referentielCR",
+      "relationshipName": "cr",
+      "relationshipSide": "left",
+      "relationshipType": "one-to-many"
+    }
+  ],
+  "searchEngine": "no"
+}

@@ -1,0 +1,46 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    @if (offre) {
+      <div>
+        <h2 data-cy="offreDetailsHeading"><span jhiTranslate="jhipsterSampleApplicationApp.offre.detail.title">Offre</span></h2>
+
+        <hr />
+
+        <jhi-alert-error></jhi-alert-error>
+
+        <jhi-alert></jhi-alert>
+
+        <dl class="row-md jh-entity-details">
+          <dt><span jhiTranslate="global.field.id">ID</span></dt>
+          <dd>
+            <span>{{ offre.id }}</span>
+          </dd>
+          <dt><span jhiTranslate="jhipsterSampleApplicationApp.offre.codeOffre">Code Offre</span></dt>
+          <dd>
+            <span>{{ offre.codeOffre }}</span>
+          </dd>
+          <dt><span jhiTranslate="jhipsterSampleApplicationApp.offre.libelleOffre">Libelle Offre</span></dt>
+          <dd>
+            <span>{{ offre.libelleOffre }}</span>
+          </dd>
+          <dt><span jhiTranslate="jhipsterSampleApplicationApp.offre.referenceEchangeAVEM">Reference Echange AVEM</span></dt>
+          <dd>
+            <span>{{ offre.referenceEchangeAVEM }}</span>
+          </dd>
+          <dt><span jhiTranslate="jhipsterSampleApplicationApp.offre.referenceEchangeCAPS">Reference Echange CAPS</span></dt>
+          <dd>
+            <span>{{ offre.referenceEchangeCAPS }}</span>
+          </dd>
+        </dl>
+
+        <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+          <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+        </button>
+
+        <button type="button" [routerLink]="['/offre', offre.id, 'edit']" class="btn btn-primary">
+          <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+        </button>
+      </div>
+    }
+  </div>
+</div>

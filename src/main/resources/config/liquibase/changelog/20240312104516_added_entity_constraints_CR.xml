@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
+    <!--
+        Added the constraints for entity CR.
+    -->
+    <changeSet id="20240312104516-2" author="jhipster">
+
+        <addForeignKeyConstraint baseColumnNames="referentielcr_id"
+                                 baseTableName="cr"
+                                 constraintName="fk_cr__referentielcr_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="referentiel_cr"
+                                 />
+
+        <addForeignKeyConstraint baseColumnNames="offre_produit_id"
+                                 baseTableName="cr"
+                                 constraintName="fk_cr__offre_produit_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="offre_produit"
+                                 />
+    </changeSet>
+</databaseChangeLog>

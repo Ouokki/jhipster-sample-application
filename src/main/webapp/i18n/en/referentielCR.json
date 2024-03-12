@@ -1,0 +1,26 @@
+{
+  "jhipsterSampleApplicationApp": {
+    "referentielCR": {
+      "home": {
+        "title": "Referentiel CRS",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Referentiel CR",
+        "createOrEditLabel": "Create or edit a Referentiel CR",
+        "notFound": "No Referentiel CRS found"
+      },
+      "created": "A new Referentiel CR is created with identifier {{ param }}",
+      "updated": "A Referentiel CR is updated with identifier {{ param }}",
+      "deleted": "A Referentiel CR is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Referentiel CR {{ id }}?"
+      },
+      "detail": {
+        "title": "Referentiel CR"
+      },
+      "id": "ID",
+      "nomCR": "Nom CR",
+      "numeroCR": "Numero CR",
+      "cr": "Cr"
+    }
+  }
+}

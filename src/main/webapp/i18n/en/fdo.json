@@ -1,0 +1,23 @@
+{
+  "jhipsterSampleApplicationApp": {
+    "fdo": {
+      "home": {
+        "title": "Fdos",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Fdo",
+        "createOrEditLabel": "Create or edit a Fdo",
+        "notFound": "No Fdos found"
+      },
+      "created": "A new Fdo is created with identifier {{ param }}",
+      "updated": "A Fdo is updated with identifier {{ param }}",
+      "deleted": "A Fdo is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Fdo {{ id }}?"
+      },
+      "detail": {
+        "title": "Fdo"
+      },
+      "id": "ID"
+    }
+  }
+}

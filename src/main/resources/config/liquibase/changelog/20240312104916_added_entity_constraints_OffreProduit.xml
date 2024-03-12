@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
+    <!--
+        Added the constraints for entity OffreProduit.
+    -->
+    <changeSet id="20240312104916-2" author="jhipster">
+
+        <addForeignKeyConstraint baseColumnNames="parametrage_id"
+                                 baseTableName="offre_produit"
+                                 constraintName="fk_offre_produit__parametrage_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="parametrage"
+                                 />
+
+        <addForeignKeyConstraint baseColumnNames="offre_produit_id"
+                                 baseTableName="rel_offre_produit__offre"
+                                 constraintName="fk_rel_offre_produit__offre__offre_produit_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="offre_produit"
+                                 />
+
+        <addForeignKeyConstraint baseColumnNames="offre_id"
+                                 baseTableName="rel_offre_produit__offre"
+                                 constraintName="fk_rel_offre_produit__offre__offre_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="offre"
+                                 />
+
+        <addForeignKeyConstraint baseColumnNames="offre_produit_id"
+                                 baseTableName="rel_offre_produit__produit"
+                                 constraintName="fk_rel_offre_produit__produit__offre_produit_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="offre_produit"
+                                 />
+
+        <addForeignKeyConstraint baseColumnNames="produit_id"
+                                 baseTableName="rel_offre_produit__produit"
+                                 constraintName="fk_rel_offre_produit__produit__produit_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="produit"
+                                 />
+    </changeSet>
+</databaseChangeLog>

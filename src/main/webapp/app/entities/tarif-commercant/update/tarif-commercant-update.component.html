@@ -1,0 +1,89 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+      <h2
+        id="jhi-tarif-commercant-heading"
+        data-cy="TarifCommercantCreateUpdateHeading"
+        jhiTranslate="jhipsterSampleApplicationApp.tarifCommercant.home.createOrEditLabel"
+      >
+        Create or edit a Tarif Commercant
+      </h2>
+
+      <div>
+        <jhi-alert-error></jhi-alert-error>
+
+        @if (editForm.controls.id.value !== null) {
+          <div class="mb-3">
+            <label class="form-label" jhiTranslate="global.field.id" for="field_id">ID</label>
+            <input type="number" class="form-control" name="id" id="field_id" data-cy="id" formControlName="id" [readonly]="true" />
+          </div>
+        }
+
+        <div class="mb-3">
+          <label class="form-label" jhiTranslate="jhipsterSampleApplicationApp.tarifCommercant.typeCommission" for="field_typeCommission"
+            >Type Commission</label
+          >
+          <select
+            class="form-control"
+            name="typeCommission"
+            formControlName="typeCommission"
+            id="field_typeCommission"
+            data-cy="typeCommission"
+          >
+            <option [ngValue]="null">{{ 'jhipsterSampleApplicationApp.TypeCommissionCommercant.null' | translate }}</option>
+            @for (typeCommissionCommercant of typeCommissionCommercantValues; track $index) {
+              <option [value]="typeCommissionCommercant">
+                {{ 'jhipsterSampleApplicationApp.TypeCommissionCommercant.' + typeCommissionCommercant | translate }}
+              </option>
+            }
+          </select>
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" jhiTranslate="jhipsterSampleApplicationApp.tarifCommercant.tarif" for="field_tarif">Tarif</label>
+          <select class="form-control" id="field_tarif" data-cy="tarif" name="tarif" formControlName="tarif" [compareWith]="compareTarif">
+            <option [ngValue]="null"></option>
+            @for (tarifOption of tarifsCollection; track $index) {
+              <option [ngValue]="tarifOption">{{ tarifOption.id }}</option>
+            }
+          </select>
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" jhiTranslate="jhipsterSampleApplicationApp.tarifCommercant.parametrage" for="field_parametrage"
+            >Parametrage</label
+          >
+          <select
+            class="form-control"
+            id="field_parametrage"
+            data-cy="parametrage"
+            name="parametrage"
+            formControlName="parametrage"
+            [compareWith]="compareParametrage"
+          >
+            <option [ngValue]="null"></option>
+            @for (parametrageOption of parametragesSharedCollection; track $index) {
+              <option [ngValue]="parametrageOption">{{ parametrageOption.id }}</option>
+            }
+          </select>
+        </div>
+      </div>
+
+      <div>
+        <button type="button" id="cancel-save" data-cy="entityCreateCancelButton" class="btn btn-secondary" (click)="previousState()">
+          <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+        </button>
+
+        <button
+          type="submit"
+          id="save-entity"
+          data-cy="entityCreateSaveButton"
+          [disabled]="editForm.invalid || isSaving"
+          class="btn btn-primary"
+        >
+          <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

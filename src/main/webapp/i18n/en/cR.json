@@ -1,0 +1,27 @@
+{
+  "jhipsterSampleApplicationApp": {
+    "cR": {
+      "home": {
+        "title": "CRS",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new CR",
+        "createOrEditLabel": "Create or edit a CR",
+        "notFound": "No CRS found"
+      },
+      "created": "A new CR is created with identifier {{ param }}",
+      "updated": "A CR is updated with identifier {{ param }}",
+      "deleted": "A CR is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete CR {{ id }}?"
+      },
+      "detail": {
+        "title": "CR"
+      },
+      "id": "ID",
+      "isAvem": "Is Avem",
+      "isAmex": "Is Amex",
+      "referentielCR": "Referentiel CR",
+      "offreProduit": "Offre Produit"
+    }
+  }
+}
