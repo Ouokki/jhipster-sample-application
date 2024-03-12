@@ -1,0 +1,25 @@
+{
+  "jhipsterSampleApplicationApp": {
+    "optionProduitCommerces": {
+      "home": {
+        "title": "Option Produit Commerces",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Option Produit Commerces",
+        "createOrEditLabel": "Create or edit a Option Produit Commerces",
+        "notFound": "No Option Produit Commerces found"
+      },
+      "created": "A new Option Produit Commerces is created with identifier {{ param }}",
+      "updated": "A Option Produit Commerces is updated with identifier {{ param }}",
+      "deleted": "A Option Produit Commerces is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Option Produit Commerces {{ id }}?"
+      },
+      "detail": {
+        "title": "Option Produit Commerces"
+      },
+      "id": "ID",
+      "tarifReferenceOption": "Tarif Reference Option",
+      "parametrage": "Parametrage"
+    }
+  }
+}

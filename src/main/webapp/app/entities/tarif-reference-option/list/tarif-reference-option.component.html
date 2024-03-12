@@ -1,0 +1,117 @@
+<div>
+  <h2 id="page-heading" data-cy="TarifReferenceOptionHeading">
+    <span jhiTranslate="jhipsterSampleApplicationApp.tarifReferenceOption.home.title">Tarif Reference Options</span>
+
+    <div class="d-flex justify-content-end">
+      <button class="btn btn-info me-2" (click)="load()" [disabled]="isLoading">
+        <fa-icon icon="sync" [spin]="isLoading"></fa-icon>
+        <span jhiTranslate="jhipsterSampleApplicationApp.tarifReferenceOption.home.refreshListLabel">Refresh list</span>
+      </button>
+
+      <button
+        id="jh-create-entity"
+        data-cy="entityCreateButton"
+        class="btn btn-primary jh-create-entity create-tarif-reference-option"
+        [routerLink]="['/tarif-reference-option/new']"
+      >
+        <fa-icon icon="plus"></fa-icon>
+        <span jhiTranslate="jhipsterSampleApplicationApp.tarifReferenceOption.home.createLabel">Create a new Tarif Reference Option</span>
+      </button>
+    </div>
+  </h2>
+
+  <jhi-alert-error></jhi-alert-error>
+
+  <jhi-alert></jhi-alert>
+
+  @if (tarifReferenceOptions?.length === 0) {
+    <div class="alert alert-warning" id="no-result">
+      <span jhiTranslate="jhipsterSampleApplicationApp.tarifReferenceOption.home.notFound">No Tarif Reference Options found</span>
+    </div>
+  }
+
+  @if (tarifReferenceOptions && tarifReferenceOptions.length > 0) {
+    <div class="table-responsive table-entities" id="entities">
+      <table class="table table-striped" aria-describedby="page-heading">
+        <thead>
+          <tr jhiSort [(predicate)]="predicate" [(ascending)]="ascending" (sortChange)="navigateToWithComponentValues()">
+            <th scope="col" jhiSortBy="id">
+              <div class="d-flex">
+                <span jhiTranslate="global.field.id">ID</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="trigramme">
+              <div class="d-flex">
+                <span jhiTranslate="jhipsterSampleApplicationApp.tarifReferenceOption.trigramme">Trigramme</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="referenceOptionProduitCommerces.id">
+              <div class="d-flex">
+                <span jhiTranslate="jhipsterSampleApplicationApp.tarifReferenceOption.referenceOptionProduitCommerces"
+                  >Reference Option Produit Commerces</span
+                >
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col"></th>
+          </tr>
+        </thead>
+        <tbody>
+          @for (tarifReferenceOption of tarifReferenceOptions; track trackId) {
+            <tr data-cy="entityTable">
+              <td>
+                <a [routerLink]="['/tarif-reference-option', tarifReferenceOption.id, 'view']">{{ tarifReferenceOption.id }}</a>
+              </td>
+              <td>{{ tarifReferenceOption.trigramme }}</td>
+              <td>
+                @for (
+                  referenceOptionProduitCommerces of tarifReferenceOption.referenceOptionProduitCommerces;
+                  track $index;
+                  let last = $last
+                ) {
+                  <span>
+                    <a
+                      class="form-control-static"
+                      [routerLink]="['/reference-option-produit-commerces', referenceOptionProduitCommerces.id, 'view']"
+                      >{{ referenceOptionProduitCommerces.id }}</a
+                    >{{ last ? '' : ', ' }}
+                  </span>
+                }
+              </td>
+              <td class="text-end">
+                <div class="btn-group">
+                  <a
+                    [routerLink]="['/tarif-reference-option', tarifReferenceOption.id, 'view']"
+                    class="btn btn-info btn-sm"
+                    data-cy="entityDetailsButton"
+                  >
+                    <fa-icon icon="eye"></fa-icon>
+                    <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                  </a>
+
+                  <a
+                    [routerLink]="['/tarif-reference-option', tarifReferenceOption.id, 'edit']"
+                    class="btn btn-primary btn-sm"
+                    data-cy="entityEditButton"
+                  >
+                    <fa-icon icon="pencil-alt"></fa-icon>
+                    <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                  </a>
+
+                  <button type="submit" (click)="delete(tarifReferenceOption)" class="btn btn-danger btn-sm" data-cy="entityDeleteButton">
+                    <fa-icon icon="times"></fa-icon>
+                    <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                  </button>
+                </div>
+              </td>
+            </tr>
+          }
+        </tbody>
+      </table>
+    </div>
+  }
+</div>

@@ -1,0 +1,54 @@
+{
+  "annotations": {
+    "changelogDate": "20240312104616"
+  },
+  "applications": "*",
+  "entityTableName": "parametrage",
+  "fields": [],
+  "name": "Parametrage",
+  "relationships": [
+    {
+      "otherEntityName": "garantie",
+      "otherEntityRelationshipName": "parametrage",
+      "relationshipName": "garantie",
+      "relationshipSide": "left",
+      "relationshipType": "one-to-one"
+    },
+    {
+      "otherEntityName": "demande",
+      "otherEntityRelationshipName": "parametrage",
+      "relationshipName": "demande",
+      "relationshipSide": "left",
+      "relationshipType": "many-to-one"
+    },
+    {
+      "otherEntityName": "tarifCommercant",
+      "otherEntityRelationshipName": "parametrage",
+      "relationshipName": "tarifCommercant",
+      "relationshipSide": "left",
+      "relationshipType": "many-to-one"
+    },
+    {
+      "otherEntityName": "optionProduitCommerces",
+      "otherEntityRelationshipName": "parametrage",
+      "relationshipName": "optionProduitCommerces",
+      "relationshipSide": "left",
+      "relationshipType": "many-to-one"
+    },
+    {
+      "otherEntityName": "conformite",
+      "otherEntityRelationshipName": "parametrage",
+      "relationshipName": "conformite",
+      "relationshipSide": "left",
+      "relationshipType": "many-to-one"
+    },
+    {
+      "otherEntityName": "offreProduit",
+      "otherEntityRelationshipName": "parametrage",
+      "relationshipName": "offreProduit",
+      "relationshipSide": "right",
+      "relationshipType": "one-to-one"
+    }
+  ],
+  "searchEngine": "no"
+}

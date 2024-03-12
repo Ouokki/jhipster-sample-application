@@ -1,0 +1,164 @@
+<div>
+  <h2 id="page-heading" data-cy="OffreProduitHeading">
+    <span jhiTranslate="jhipsterSampleApplicationApp.offreProduit.home.title">Offre Produits</span>
+
+    <div class="d-flex justify-content-end">
+      <button class="btn btn-info me-2" (click)="load()" [disabled]="isLoading">
+        <fa-icon icon="sync" [spin]="isLoading"></fa-icon>
+        <span jhiTranslate="jhipsterSampleApplicationApp.offreProduit.home.refreshListLabel">Refresh list</span>
+      </button>
+
+      <button
+        id="jh-create-entity"
+        data-cy="entityCreateButton"
+        class="btn btn-primary jh-create-entity create-offre-produit"
+        [routerLink]="['/offre-produit/new']"
+      >
+        <fa-icon icon="plus"></fa-icon>
+        <span jhiTranslate="jhipsterSampleApplicationApp.offreProduit.home.createLabel">Create a new Offre Produit</span>
+      </button>
+    </div>
+  </h2>
+
+  <jhi-alert-error></jhi-alert-error>
+
+  <jhi-alert></jhi-alert>
+
+  @if (offreProduits?.length === 0) {
+    <div class="alert alert-warning" id="no-result">
+      <span jhiTranslate="jhipsterSampleApplicationApp.offreProduit.home.notFound">No Offre Produits found</span>
+    </div>
+  }
+
+  @if (offreProduits && offreProduits.length > 0) {
+    <div class="table-responsive table-entities" id="entities">
+      <table class="table table-striped" aria-describedby="page-heading">
+        <thead>
+          <tr jhiSort [(predicate)]="predicate" [(ascending)]="ascending" (sortChange)="navigateToWithComponentValues()">
+            <th scope="col" jhiSortBy="id">
+              <div class="d-flex">
+                <span jhiTranslate="global.field.id">ID</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="activeProd">
+              <div class="d-flex">
+                <span jhiTranslate="jhipsterSampleApplicationApp.offreProduit.activeProd">Active Prod</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="activeNEHOM">
+              <div class="d-flex">
+                <span jhiTranslate="jhipsterSampleApplicationApp.offreProduit.activeNEHOM">Active NEHOM</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="activeVMOA">
+              <div class="d-flex">
+                <span jhiTranslate="jhipsterSampleApplicationApp.offreProduit.activeVMOA">Active VMOA</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="activeDEVTU">
+              <div class="d-flex">
+                <span jhiTranslate="jhipsterSampleApplicationApp.offreProduit.activeDEVTU">Active DEVTU</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="parametrage.id">
+              <div class="d-flex">
+                <span jhiTranslate="jhipsterSampleApplicationApp.offreProduit.parametrage">Parametrage</span>
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="cr.id">
+              <div class="d-flex">
+                <span jhiTranslate="jhipsterSampleApplicationApp.offreProduit.cr">Cr</span>
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="offre.id">
+              <div class="d-flex">
+                <span jhiTranslate="jhipsterSampleApplicationApp.offreProduit.offre">Offre</span>
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="produit.id">
+              <div class="d-flex">
+                <span jhiTranslate="jhipsterSampleApplicationApp.offreProduit.produit">Produit</span>
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col"></th>
+          </tr>
+        </thead>
+        <tbody>
+          @for (offreProduit of offreProduits; track trackId) {
+            <tr data-cy="entityTable">
+              <td>
+                <a [routerLink]="['/offre-produit', offreProduit.id, 'view']">{{ offreProduit.id }}</a>
+              </td>
+              <td>{{ offreProduit.activeProd }}</td>
+              <td>{{ offreProduit.activeNEHOM }}</td>
+              <td>{{ offreProduit.activeVMOA }}</td>
+              <td>{{ offreProduit.activeDEVTU }}</td>
+              <td>
+                @if (offreProduit.parametrage) {
+                  <div>
+                    <a [routerLink]="['/parametrage', offreProduit.parametrage.id, 'view']">{{ offreProduit.parametrage.id }}</a>
+                  </div>
+                }
+              </td>
+              <td>
+                @if (offreProduit.cr) {
+                  <div>
+                    <a [routerLink]="['/cr', offreProduit.cr.id, 'view']">{{ offreProduit.cr.id }}</a>
+                  </div>
+                }
+              </td>
+              <td>
+                @for (offre of offreProduit.offres; track $index; let last = $last) {
+                  <span>
+                    <a class="form-control-static" [routerLink]="['/offre', offre.id, 'view']">{{ offre.id }}</a
+                    >{{ last ? '' : ', ' }}
+                  </span>
+                }
+              </td>
+              <td>
+                @for (produit of offreProduit.produits; track $index; let last = $last) {
+                  <span>
+                    <a class="form-control-static" [routerLink]="['/produit', produit.id, 'view']">{{ produit.id }}</a
+                    >{{ last ? '' : ', ' }}
+                  </span>
+                }
+              </td>
+              <td class="text-end">
+                <div class="btn-group">
+                  <a [routerLink]="['/offre-produit', offreProduit.id, 'view']" class="btn btn-info btn-sm" data-cy="entityDetailsButton">
+                    <fa-icon icon="eye"></fa-icon>
+                    <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                  </a>
+
+                  <a [routerLink]="['/offre-produit', offreProduit.id, 'edit']" class="btn btn-primary btn-sm" data-cy="entityEditButton">
+                    <fa-icon icon="pencil-alt"></fa-icon>
+                    <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                  </a>
+
+                  <button type="submit" (click)="delete(offreProduit)" class="btn btn-danger btn-sm" data-cy="entityDeleteButton">
+                    <fa-icon icon="times"></fa-icon>
+                    <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                  </button>
+                </div>
+              </td>
+            </tr>
+          }
+        </tbody>
+      </table>
+    </div>
+  }
+</div>

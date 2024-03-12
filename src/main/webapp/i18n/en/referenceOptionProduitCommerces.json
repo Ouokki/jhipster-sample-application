@@ -1,0 +1,26 @@
+{
+  "jhipsterSampleApplicationApp": {
+    "referenceOptionProduitCommerces": {
+      "home": {
+        "title": "Reference Option Produit Commerces",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Reference Option Produit Commerces",
+        "createOrEditLabel": "Create or edit a Reference Option Produit Commerces",
+        "notFound": "No Reference Option Produit Commerces found"
+      },
+      "created": "A new Reference Option Produit Commerces is created with identifier {{ param }}",
+      "updated": "A Reference Option Produit Commerces is updated with identifier {{ param }}",
+      "deleted": "A Reference Option Produit Commerces is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Reference Option Produit Commerces {{ id }}?"
+      },
+      "detail": {
+        "title": "Reference Option Produit Commerces"
+      },
+      "id": "ID",
+      "codeOptionProduit": "Code Option Produit",
+      "libelleOptionProduit": "Libelle Option Produit",
+      "tarifReferenceOption": "Tarif Reference Option"
+    }
+  }
+}

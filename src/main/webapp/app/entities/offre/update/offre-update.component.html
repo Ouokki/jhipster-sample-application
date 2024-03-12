@@ -1,0 +1,87 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+      <h2
+        id="jhi-offre-heading"
+        data-cy="OffreCreateUpdateHeading"
+        jhiTranslate="jhipsterSampleApplicationApp.offre.home.createOrEditLabel"
+      >
+        Create or edit a Offre
+      </h2>
+
+      <div>
+        <jhi-alert-error></jhi-alert-error>
+
+        @if (editForm.controls.id.value !== null) {
+          <div class="mb-3">
+            <label class="form-label" jhiTranslate="global.field.id" for="field_id">ID</label>
+            <input type="number" class="form-control" name="id" id="field_id" data-cy="id" formControlName="id" [readonly]="true" />
+          </div>
+        }
+
+        <div class="mb-3">
+          <label class="form-label" jhiTranslate="jhipsterSampleApplicationApp.offre.codeOffre" for="field_codeOffre">Code Offre</label>
+          <input type="text" class="form-control" name="codeOffre" id="field_codeOffre" data-cy="codeOffre" formControlName="codeOffre" />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" jhiTranslate="jhipsterSampleApplicationApp.offre.libelleOffre" for="field_libelleOffre"
+            >Libelle Offre</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            name="libelleOffre"
+            id="field_libelleOffre"
+            data-cy="libelleOffre"
+            formControlName="libelleOffre"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" jhiTranslate="jhipsterSampleApplicationApp.offre.referenceEchangeAVEM" for="field_referenceEchangeAVEM"
+            >Reference Echange AVEM</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            name="referenceEchangeAVEM"
+            id="field_referenceEchangeAVEM"
+            data-cy="referenceEchangeAVEM"
+            formControlName="referenceEchangeAVEM"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" jhiTranslate="jhipsterSampleApplicationApp.offre.referenceEchangeCAPS" for="field_referenceEchangeCAPS"
+            >Reference Echange CAPS</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            name="referenceEchangeCAPS"
+            id="field_referenceEchangeCAPS"
+            data-cy="referenceEchangeCAPS"
+            formControlName="referenceEchangeCAPS"
+          />
+        </div>
+      </div>
+
+      <div>
+        <button type="button" id="cancel-save" data-cy="entityCreateCancelButton" class="btn btn-secondary" (click)="previousState()">
+          <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+        </button>
+
+        <button
+          type="submit"
+          id="save-entity"
+          data-cy="entityCreateSaveButton"
+          [disabled]="editForm.invalid || isSaving"
+          class="btn btn-primary"
+        >
+          <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

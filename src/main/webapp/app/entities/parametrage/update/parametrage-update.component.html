@@ -1,0 +1,134 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+      <h2
+        id="jhi-parametrage-heading"
+        data-cy="ParametrageCreateUpdateHeading"
+        jhiTranslate="jhipsterSampleApplicationApp.parametrage.home.createOrEditLabel"
+      >
+        Create or edit a Parametrage
+      </h2>
+
+      <div>
+        <jhi-alert-error></jhi-alert-error>
+
+        @if (editForm.controls.id.value !== null) {
+          <div class="mb-3">
+            <label class="form-label" jhiTranslate="global.field.id" for="field_id">ID</label>
+            <input type="number" class="form-control" name="id" id="field_id" data-cy="id" formControlName="id" [readonly]="true" />
+          </div>
+        }
+
+        <div class="mb-3">
+          <label class="form-label" jhiTranslate="jhipsterSampleApplicationApp.parametrage.garantie" for="field_garantie">Garantie</label>
+          <select
+            class="form-control"
+            id="field_garantie"
+            data-cy="garantie"
+            name="garantie"
+            formControlName="garantie"
+            [compareWith]="compareGarantie"
+          >
+            <option [ngValue]="null"></option>
+            @for (garantieOption of garantiesCollection; track $index) {
+              <option [ngValue]="garantieOption">{{ garantieOption.id }}</option>
+            }
+          </select>
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" jhiTranslate="jhipsterSampleApplicationApp.parametrage.demande" for="field_demande">Demande</label>
+          <select
+            class="form-control"
+            id="field_demande"
+            data-cy="demande"
+            name="demande"
+            formControlName="demande"
+            [compareWith]="compareDemande"
+          >
+            <option [ngValue]="null"></option>
+            @for (demandeOption of demandesSharedCollection; track $index) {
+              <option [ngValue]="demandeOption">{{ demandeOption.id }}</option>
+            }
+          </select>
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" jhiTranslate="jhipsterSampleApplicationApp.parametrage.tarifCommercant" for="field_tarifCommercant"
+            >Tarif Commercant</label
+          >
+          <select
+            class="form-control"
+            id="field_tarifCommercant"
+            data-cy="tarifCommercant"
+            name="tarifCommercant"
+            formControlName="tarifCommercant"
+            [compareWith]="compareTarifCommercant"
+          >
+            <option [ngValue]="null"></option>
+            @for (tarifCommercantOption of tarifCommercantsSharedCollection; track $index) {
+              <option [ngValue]="tarifCommercantOption">{{ tarifCommercantOption.id }}</option>
+            }
+          </select>
+        </div>
+
+        <div class="mb-3">
+          <label
+            class="form-label"
+            jhiTranslate="jhipsterSampleApplicationApp.parametrage.optionProduitCommerces"
+            for="field_optionProduitCommerces"
+            >Option Produit Commerces</label
+          >
+          <select
+            class="form-control"
+            id="field_optionProduitCommerces"
+            data-cy="optionProduitCommerces"
+            name="optionProduitCommerces"
+            formControlName="optionProduitCommerces"
+            [compareWith]="compareOptionProduitCommerces"
+          >
+            <option [ngValue]="null"></option>
+            @for (optionProduitCommercesOption of optionProduitCommercesSharedCollection; track $index) {
+              <option [ngValue]="optionProduitCommercesOption">{{ optionProduitCommercesOption.id }}</option>
+            }
+          </select>
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" jhiTranslate="jhipsterSampleApplicationApp.parametrage.conformite" for="field_conformite"
+            >Conformite</label
+          >
+          <select
+            class="form-control"
+            id="field_conformite"
+            data-cy="conformite"
+            name="conformite"
+            formControlName="conformite"
+            [compareWith]="compareConformite"
+          >
+            <option [ngValue]="null"></option>
+            @for (conformiteOption of conformitesSharedCollection; track $index) {
+              <option [ngValue]="conformiteOption">{{ conformiteOption.id }}</option>
+            }
+          </select>
+        </div>
+      </div>
+
+      <div>
+        <button type="button" id="cancel-save" data-cy="entityCreateCancelButton" class="btn btn-secondary" (click)="previousState()">
+          <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+        </button>
+
+        <button
+          type="submit"
+          id="save-entity"
+          data-cy="entityCreateSaveButton"
+          [disabled]="editForm.invalid || isSaving"
+          class="btn btn-primary"
+        >
+          <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

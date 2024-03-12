@@ -1,0 +1,38 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    @if (tpe) {
+      <div>
+        <h2 data-cy="tpeDetailsHeading"><span jhiTranslate="jhipsterSampleApplicationApp.tpe.detail.title">Tpe</span></h2>
+
+        <hr />
+
+        <jhi-alert-error></jhi-alert-error>
+
+        <jhi-alert></jhi-alert>
+
+        <dl class="row-md jh-entity-details">
+          <dt><span jhiTranslate="global.field.id">ID</span></dt>
+          <dd>
+            <span>{{ tpe.id }}</span>
+          </dd>
+          <dt><span jhiTranslate="jhipsterSampleApplicationApp.tpe.imageTpe">Image Tpe</span></dt>
+          <dd>
+            <span>{{ tpe.imageTpe }}</span>
+          </dd>
+          <dt><span jhiTranslate="jhipsterSampleApplicationApp.tpe.descriptif">Descriptif</span></dt>
+          <dd>
+            <span>{{ tpe.descriptif }}</span>
+          </dd>
+        </dl>
+
+        <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+          <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+        </button>
+
+        <button type="button" [routerLink]="['/tpe', tpe.id, 'edit']" class="btn btn-primary">
+          <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+        </button>
+      </div>
+    }
+  </div>
+</div>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
+    <!--
+        Added the constraints for entity TarifReferenceOption.
+    -->
+    <changeSet id="20240312105916-2" author="jhipster">
+
+        <addForeignKeyConstraint baseColumnNames="tarif_reference_option_id"
+                                 baseTableName="rel_tarif_reference_option__reference_option_produit_commerces"
+                                 constraintName="fk_rel_tarif_reference_option____tarif_reference_option_10_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="tarif_reference_option"
+                                 />
+
+        <addForeignKeyConstraint baseColumnNames="reference_option_produit_commerces_id"
+                                 baseTableName="rel_tarif_reference_option__reference_option_produit_commerces"
+                                 constraintName="fk_rel_tarif_reference_option____reference_option_produit_b7_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="reference_option_produit_commerces"
+                                 />
+    </changeSet>
+</databaseChangeLog>

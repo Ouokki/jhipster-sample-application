@@ -1,0 +1,145 @@
+<div>
+  <h2 id="page-heading" data-cy="ParametrageHeading">
+    <span jhiTranslate="jhipsterSampleApplicationApp.parametrage.home.title">Parametrages</span>
+
+    <div class="d-flex justify-content-end">
+      <button class="btn btn-info me-2" (click)="load()" [disabled]="isLoading">
+        <fa-icon icon="sync" [spin]="isLoading"></fa-icon>
+        <span jhiTranslate="jhipsterSampleApplicationApp.parametrage.home.refreshListLabel">Refresh list</span>
+      </button>
+
+      <button
+        id="jh-create-entity"
+        data-cy="entityCreateButton"
+        class="btn btn-primary jh-create-entity create-parametrage"
+        [routerLink]="['/parametrage/new']"
+      >
+        <fa-icon icon="plus"></fa-icon>
+        <span jhiTranslate="jhipsterSampleApplicationApp.parametrage.home.createLabel">Create a new Parametrage</span>
+      </button>
+    </div>
+  </h2>
+
+  <jhi-alert-error></jhi-alert-error>
+
+  <jhi-alert></jhi-alert>
+
+  @if (parametrages?.length === 0) {
+    <div class="alert alert-warning" id="no-result">
+      <span jhiTranslate="jhipsterSampleApplicationApp.parametrage.home.notFound">No Parametrages found</span>
+    </div>
+  }
+
+  @if (parametrages && parametrages.length > 0) {
+    <div class="table-responsive table-entities" id="entities">
+      <table class="table table-striped" aria-describedby="page-heading">
+        <thead>
+          <tr jhiSort [(predicate)]="predicate" [(ascending)]="ascending" (sortChange)="navigateToWithComponentValues()">
+            <th scope="col" jhiSortBy="id">
+              <div class="d-flex">
+                <span jhiTranslate="global.field.id">ID</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="garantie.id">
+              <div class="d-flex">
+                <span jhiTranslate="jhipsterSampleApplicationApp.parametrage.garantie">Garantie</span>
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="demande.id">
+              <div class="d-flex">
+                <span jhiTranslate="jhipsterSampleApplicationApp.parametrage.demande">Demande</span>
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="tarifCommercant.id">
+              <div class="d-flex">
+                <span jhiTranslate="jhipsterSampleApplicationApp.parametrage.tarifCommercant">Tarif Commercant</span>
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="optionProduitCommerces.id">
+              <div class="d-flex">
+                <span jhiTranslate="jhipsterSampleApplicationApp.parametrage.optionProduitCommerces">Option Produit Commerces</span>
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="conformite.id">
+              <div class="d-flex">
+                <span jhiTranslate="jhipsterSampleApplicationApp.parametrage.conformite">Conformite</span>
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col"></th>
+          </tr>
+        </thead>
+        <tbody>
+          @for (parametrage of parametrages; track trackId) {
+            <tr data-cy="entityTable">
+              <td>
+                <a [routerLink]="['/parametrage', parametrage.id, 'view']">{{ parametrage.id }}</a>
+              </td>
+              <td>
+                @if (parametrage.garantie) {
+                  <div>
+                    <a [routerLink]="['/garantie', parametrage.garantie.id, 'view']">{{ parametrage.garantie.id }}</a>
+                  </div>
+                }
+              </td>
+              <td>
+                @if (parametrage.demande) {
+                  <div>
+                    <a [routerLink]="['/demande', parametrage.demande.id, 'view']">{{ parametrage.demande.id }}</a>
+                  </div>
+                }
+              </td>
+              <td>
+                @if (parametrage.tarifCommercant) {
+                  <div>
+                    <a [routerLink]="['/tarif-commercant', parametrage.tarifCommercant.id, 'view']">{{ parametrage.tarifCommercant.id }}</a>
+                  </div>
+                }
+              </td>
+              <td>
+                @if (parametrage.optionProduitCommerces) {
+                  <div>
+                    <a [routerLink]="['/option-produit-commerces', parametrage.optionProduitCommerces.id, 'view']">{{
+                      parametrage.optionProduitCommerces.id
+                    }}</a>
+                  </div>
+                }
+              </td>
+              <td>
+                @if (parametrage.conformite) {
+                  <div>
+                    <a [routerLink]="['/conformite', parametrage.conformite.id, 'view']">{{ parametrage.conformite.id }}</a>
+                  </div>
+                }
+              </td>
+              <td class="text-end">
+                <div class="btn-group">
+                  <a [routerLink]="['/parametrage', parametrage.id, 'view']" class="btn btn-info btn-sm" data-cy="entityDetailsButton">
+                    <fa-icon icon="eye"></fa-icon>
+                    <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                  </a>
+
+                  <a [routerLink]="['/parametrage', parametrage.id, 'edit']" class="btn btn-primary btn-sm" data-cy="entityEditButton">
+                    <fa-icon icon="pencil-alt"></fa-icon>
+                    <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                  </a>
+
+                  <button type="submit" (click)="delete(parametrage)" class="btn btn-danger btn-sm" data-cy="entityDeleteButton">
+                    <fa-icon icon="times"></fa-icon>
+                    <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                  </button>
+                </div>
+              </td>
+            </tr>
+          }
+        </tbody>
+      </table>
+    </div>
+  }
+</div>

@@ -1,0 +1,46 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    @if (demande) {
+      <div>
+        <h2 data-cy="demandeDetailsHeading"><span jhiTranslate="jhipsterSampleApplicationApp.demande.detail.title">Demande</span></h2>
+
+        <hr />
+
+        <jhi-alert-error></jhi-alert-error>
+
+        <jhi-alert></jhi-alert>
+
+        <dl class="row-md jh-entity-details">
+          <dt><span jhiTranslate="global.field.id">ID</span></dt>
+          <dd>
+            <span>{{ demande.id }}</span>
+          </dd>
+          <dt><span jhiTranslate="jhipsterSampleApplicationApp.demande.dateDemande">Date Demande</span></dt>
+          <dd>
+            <span>{{ demande.dateDemande | formatMediumDatetime }}</span>
+          </dd>
+          <dt><span jhiTranslate="jhipsterSampleApplicationApp.demande.validiation">Validiation</span></dt>
+          <dd>
+            <span>{{ demande.validiation }}</span>
+          </dd>
+          <dt><span jhiTranslate="jhipsterSampleApplicationApp.demande.histModifDemande">Hist Modif Demande</span></dt>
+          <dd>
+            @if (demande.histModifDemande) {
+              <div>
+                <a [routerLink]="['/hist-modif-demande', demande.histModifDemande.id, 'view']">{{ demande.histModifDemande.id }}</a>
+              </div>
+            }
+          </dd>
+        </dl>
+
+        <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+          <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+        </button>
+
+        <button type="button" [routerLink]="['/demande', demande.id, 'edit']" class="btn btn-primary">
+          <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+        </button>
+      </div>
+    }
+  </div>
+</div>

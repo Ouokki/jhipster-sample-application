@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
+    <!--
+        Added the constraints for entity ReferentielCR.
+    -->
+    <changeSet id="20240312104216-2" author="jhipster">
+
+        <addForeignKeyConstraint baseColumnNames="cr_id"
+                                 baseTableName="referentiel_cr"
+                                 constraintName="fk_referentiel_cr__cr_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="cr"
+                                 />
+    </changeSet>
+</databaseChangeLog>

@@ -7,7 +7,27 @@
       "jhipster-needle-menu-add-element": "JHipster will add additional menu entries here (do not translate!)",
       "entities": {
         "main": "Entities",
-        "jhipster-needle-menu-add-entry": "JHipster will add additional entities here (do not translate!)"
+        "jhipster-needle-menu-add-entry": "JHipster will add additional entities here (do not translate!)",
+        "referentielCr": "Referentiel CR",
+        "demande": "Demande",
+        "histModifDemande": "Hist Modif Demande",
+        "cr": "CR",
+        "parametrage": "Parametrage",
+        "offre": "Offre",
+        "produit": "Produit",
+        "offreProduit": "Offre Produit",
+        "garantie": "Garantie",
+        "tarifCommercant": "Tarif Commercant",
+        "tarif": "Tarif",
+        "logiciel": "Logiciel",
+        "fdo": "Fdo",
+        "option": "Option",
+        "autreFrais": "Autre Frais",
+        "optionProduitCommerces": "Option Produit Commerces",
+        "referenceOptionProduitCommerces": "Reference Option Produit Commerces",
+        "tarifReferenceOption": "Tarif Reference Option",
+        "conformite": "Conformite",
+        "tpe": "Tpe"
       },
       "account": {
         "main": "Account",
