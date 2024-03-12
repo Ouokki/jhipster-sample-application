@@ -1,0 +1,11 @@
+{
+  "annotations": {
+    "changelogDate": "20240312105416"
+  },
+  "applications": "*",
+  "entityTableName": "fdo",
+  "fields": [],
+  "name": "Fdo",
+  "relationships": [],
+  "searchEngine": "no"
+}

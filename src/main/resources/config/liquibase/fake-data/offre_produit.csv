@@ -1,0 +1,11 @@
+id;active_prod;active_nehom;active_vmoa;active_devtu
+1;true;false;false;false
+2;true;true;true;false
+3;true;false;true;true
+4;true;true;true;true
+5;false;false;true;false
+6;false;true;true;false
+7;false;true;true;false
+8;true;true;true;false
+9;true;false;false;false
+10;false;false;false;true

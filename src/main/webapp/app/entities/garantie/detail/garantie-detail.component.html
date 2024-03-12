@@ -1,0 +1,54 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    @if (garantie) {
+      <div>
+        <h2 data-cy="garantieDetailsHeading"><span jhiTranslate="jhipsterSampleApplicationApp.garantie.detail.title">Garantie</span></h2>
+
+        <hr />
+
+        <jhi-alert-error></jhi-alert-error>
+
+        <jhi-alert></jhi-alert>
+
+        <dl class="row-md jh-entity-details">
+          <dt><span jhiTranslate="global.field.id">ID</span></dt>
+          <dd>
+            <span>{{ garantie.id }}</span>
+          </dd>
+          <dt>
+            <span jhiTranslate="jhipsterSampleApplicationApp.garantie.montantAutorisationTransaction"
+              >Montant Autorisation Transaction</span
+            >
+          </dt>
+          <dd>
+            <span>{{ garantie.montantAutorisationTransaction }}</span>
+          </dd>
+          <dt><span jhiTranslate="jhipsterSampleApplicationApp.garantie.montantAutorisationTPE">Montant Autorisation TPE</span></dt>
+          <dd>
+            <span>{{ garantie.montantAutorisationTPE }}</span>
+          </dd>
+          <dt><span jhiTranslate="jhipsterSampleApplicationApp.garantie.delaiRemise">Delai Remise</span></dt>
+          <dd>
+            <span>{{ garantie.delaiRemise }}</span>
+          </dd>
+          <dt>
+            <span jhiTranslate="jhipsterSampleApplicationApp.garantie.delaiCommunicationJustificatif"
+              >Delai Communication Justificatif</span
+            >
+          </dt>
+          <dd>
+            <span>{{ garantie.delaiCommunicationJustificatif }}</span>
+          </dd>
+        </dl>
+
+        <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+          <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+        </button>
+
+        <button type="button" [routerLink]="['/garantie', garantie.id, 'edit']" class="btn btn-primary">
+          <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+        </button>
+      </div>
+    }
+  </div>
+</div>

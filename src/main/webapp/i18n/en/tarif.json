@@ -1,0 +1,29 @@
+{
+  "jhipsterSampleApplicationApp": {
+    "tarif": {
+      "home": {
+        "title": "Tarifs",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Tarif",
+        "createOrEditLabel": "Create or edit a Tarif",
+        "notFound": "No Tarifs found"
+      },
+      "created": "A new Tarif is created with identifier {{ param }}",
+      "updated": "A Tarif is updated with identifier {{ param }}",
+      "deleted": "A Tarif is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Tarif {{ id }}?"
+      },
+      "detail": {
+        "title": "Tarif"
+      },
+      "id": "ID",
+      "tarifParDefaut": "Tarif Par Defaut",
+      "tarifMinimum": "Tarif Minimum",
+      "tarifMaximum": "Tarif Maximum",
+      "unite": "Unite",
+      "tarifReferenceOption": "Tarif Reference Option",
+      "tarifCommercant": "Tarif Commercant"
+    }
+  }
+}

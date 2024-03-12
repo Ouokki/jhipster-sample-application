@@ -1,0 +1,149 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+      <h2
+        id="jhi-offre-produit-heading"
+        data-cy="OffreProduitCreateUpdateHeading"
+        jhiTranslate="jhipsterSampleApplicationApp.offreProduit.home.createOrEditLabel"
+      >
+        Create or edit a Offre Produit
+      </h2>
+
+      <div>
+        <jhi-alert-error></jhi-alert-error>
+
+        @if (editForm.controls.id.value !== null) {
+          <div class="mb-3">
+            <label class="form-label" jhiTranslate="global.field.id" for="field_id">ID</label>
+            <input type="number" class="form-control" name="id" id="field_id" data-cy="id" formControlName="id" [readonly]="true" />
+          </div>
+        }
+
+        <div class="mb-3">
+          <label class="form-label" jhiTranslate="jhipsterSampleApplicationApp.offreProduit.activeProd" for="field_activeProd"
+            >Active Prod</label
+          >
+          <input
+            type="checkbox"
+            class="form-check"
+            name="activeProd"
+            id="field_activeProd"
+            data-cy="activeProd"
+            formControlName="activeProd"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" jhiTranslate="jhipsterSampleApplicationApp.offreProduit.activeNEHOM" for="field_activeNEHOM"
+            >Active NEHOM</label
+          >
+          <input
+            type="checkbox"
+            class="form-check"
+            name="activeNEHOM"
+            id="field_activeNEHOM"
+            data-cy="activeNEHOM"
+            formControlName="activeNEHOM"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" jhiTranslate="jhipsterSampleApplicationApp.offreProduit.activeVMOA" for="field_activeVMOA"
+            >Active VMOA</label
+          >
+          <input
+            type="checkbox"
+            class="form-check"
+            name="activeVMOA"
+            id="field_activeVMOA"
+            data-cy="activeVMOA"
+            formControlName="activeVMOA"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" jhiTranslate="jhipsterSampleApplicationApp.offreProduit.activeDEVTU" for="field_activeDEVTU"
+            >Active DEVTU</label
+          >
+          <input
+            type="checkbox"
+            class="form-check"
+            name="activeDEVTU"
+            id="field_activeDEVTU"
+            data-cy="activeDEVTU"
+            formControlName="activeDEVTU"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" jhiTranslate="jhipsterSampleApplicationApp.offreProduit.parametrage" for="field_parametrage"
+            >Parametrage</label
+          >
+          <select
+            class="form-control"
+            id="field_parametrage"
+            data-cy="parametrage"
+            name="parametrage"
+            formControlName="parametrage"
+            [compareWith]="compareParametrage"
+          >
+            <option [ngValue]="null"></option>
+            @for (parametrageOption of parametragesCollection; track $index) {
+              <option [ngValue]="parametrageOption">{{ parametrageOption.id }}</option>
+            }
+          </select>
+        </div>
+
+        <div class="mb-3">
+          <label jhiTranslate="jhipsterSampleApplicationApp.offreProduit.offre" for="field_offres">Offre</label>
+          <select
+            class="form-control"
+            id="field_offres"
+            data-cy="offre"
+            multiple
+            name="offres"
+            formControlName="offres"
+            [compareWith]="compareOffre"
+          >
+            @for (offreOption of offresSharedCollection; track $index) {
+              <option [ngValue]="offreOption">{{ offreOption.id }}</option>
+            }
+          </select>
+        </div>
+
+        <div class="mb-3">
+          <label jhiTranslate="jhipsterSampleApplicationApp.offreProduit.produit" for="field_produits">Produit</label>
+          <select
+            class="form-control"
+            id="field_produits"
+            data-cy="produit"
+            multiple
+            name="produits"
+            formControlName="produits"
+            [compareWith]="compareProduit"
+          >
+            @for (produitOption of produitsSharedCollection; track $index) {
+              <option [ngValue]="produitOption">{{ produitOption.id }}</option>
+            }
+          </select>
+        </div>
+      </div>
+
+      <div>
+        <button type="button" id="cancel-save" data-cy="entityCreateCancelButton" class="btn btn-secondary" (click)="previousState()">
+          <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+        </button>
+
+        <button
+          type="submit"
+          id="save-entity"
+          data-cy="entityCreateSaveButton"
+          [disabled]="editForm.invalid || isSaving"
+          class="btn btn-primary"
+        >
+          <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

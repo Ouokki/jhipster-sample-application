@@ -1,0 +1,9 @@
+{
+  "jhipsterSampleApplicationApp": {
+    "TypeCommissionCommercant": {
+      "null": "",
+      "FORFAIT": "FORFAIT",
+      "GRILLE": "GRILLE"
+    }
+  }
+}

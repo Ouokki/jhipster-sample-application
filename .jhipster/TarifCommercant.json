@@ -1,0 +1,32 @@
+{
+  "annotations": {
+    "changelogDate": "20240312105116"
+  },
+  "applications": "*",
+  "entityTableName": "tarif_commercant",
+  "fields": [
+    {
+      "fieldName": "typeCommission",
+      "fieldType": "TypeCommissionCommercant",
+      "fieldValues": "FORFAIT,GRILLE"
+    }
+  ],
+  "name": "TarifCommercant",
+  "relationships": [
+    {
+      "otherEntityName": "tarif",
+      "otherEntityRelationshipName": "tarifCommercant",
+      "relationshipName": "tarif",
+      "relationshipSide": "left",
+      "relationshipType": "one-to-one"
+    },
+    {
+      "otherEntityName": "parametrage",
+      "otherEntityRelationshipName": "tarifCommercant",
+      "relationshipName": "parametrage",
+      "relationshipSide": "right",
+      "relationshipType": "many-to-one"
+    }
+  ],
+  "searchEngine": "no"
+}

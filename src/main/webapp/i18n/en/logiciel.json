@@ -1,0 +1,24 @@
+{
+  "jhipsterSampleApplicationApp": {
+    "logiciel": {
+      "home": {
+        "title": "Logiciels",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Logiciel",
+        "createOrEditLabel": "Create or edit a Logiciel",
+        "notFound": "No Logiciels found"
+      },
+      "created": "A new Logiciel is created with identifier {{ param }}",
+      "updated": "A Logiciel is updated with identifier {{ param }}",
+      "deleted": "A Logiciel is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Logiciel {{ id }}?"
+      },
+      "detail": {
+        "title": "Logiciel"
+      },
+      "id": "ID",
+      "parDefault": "Par Default"
+    }
+  }
+}
