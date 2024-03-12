@@ -1,0 +1,28 @@
+{
+  "jhipsterSampleApplicationApp": {
+    "garantie": {
+      "home": {
+        "title": "Garanties",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Garantie",
+        "createOrEditLabel": "Create or edit a Garantie",
+        "notFound": "No Garanties found"
+      },
+      "created": "A new Garantie is created with identifier {{ param }}",
+      "updated": "A Garantie is updated with identifier {{ param }}",
+      "deleted": "A Garantie is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Garantie {{ id }}?"
+      },
+      "detail": {
+        "title": "Garantie"
+      },
+      "id": "ID",
+      "montantAutorisationTransaction": "Montant Autorisation Transaction",
+      "montantAutorisationTPE": "Montant Autorisation TPE",
+      "delaiRemise": "Delai Remise",
+      "delaiCommunicationJustificatif": "Delai Communication Justificatif",
+      "parametrage": "Parametrage"
+    }
+  }
+}

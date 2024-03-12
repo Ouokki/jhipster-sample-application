@@ -1,0 +1,44 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    @if (histModifDemande) {
+      <div>
+        <h2 data-cy="histModifDemandeDetailsHeading">
+          <span jhiTranslate="jhipsterSampleApplicationApp.histModifDemande.detail.title">Hist Modif Demande</span>
+        </h2>
+
+        <hr />
+
+        <jhi-alert-error></jhi-alert-error>
+
+        <jhi-alert></jhi-alert>
+
+        <dl class="row-md jh-entity-details">
+          <dt><span jhiTranslate="global.field.id">ID</span></dt>
+          <dd>
+            <span>{{ histModifDemande.id }}</span>
+          </dd>
+          <dt><span jhiTranslate="jhipsterSampleApplicationApp.histModifDemande.dateModification">Date Modification</span></dt>
+          <dd>
+            <span>{{ histModifDemande.dateModification | formatMediumDatetime }}</span>
+          </dd>
+          <dt><span jhiTranslate="jhipsterSampleApplicationApp.histModifDemande.typeModification">Type Modification</span></dt>
+          <dd>
+            <span>{{ histModifDemande.typeModification }}</span>
+          </dd>
+          <dt><span jhiTranslate="jhipsterSampleApplicationApp.histModifDemande.detailsModifications">Details Modifications</span></dt>
+          <dd>
+            <span>{{ histModifDemande.detailsModifications }}</span>
+          </dd>
+        </dl>
+
+        <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+          <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+        </button>
+
+        <button type="button" [routerLink]="['/hist-modif-demande', histModifDemande.id, 'edit']" class="btn btn-primary">
+          <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+        </button>
+      </div>
+    }
+  </div>
+</div>

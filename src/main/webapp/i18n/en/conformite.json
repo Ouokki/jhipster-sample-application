@@ -1,0 +1,26 @@
+{
+  "jhipsterSampleApplicationApp": {
+    "conformite": {
+      "home": {
+        "title": "Conformites",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Conformite",
+        "createOrEditLabel": "Create or edit a Conformite",
+        "notFound": "No Conformites found"
+      },
+      "created": "A new Conformite is created with identifier {{ param }}",
+      "updated": "A Conformite is updated with identifier {{ param }}",
+      "deleted": "A Conformite is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Conformite {{ id }}?"
+      },
+      "detail": {
+        "title": "Conformite"
+      },
+      "id": "ID",
+      "affichage": "Affichage",
+      "lienBonita": "Lien Bonita",
+      "parametrage": "Parametrage"
+    }
+  }
+}

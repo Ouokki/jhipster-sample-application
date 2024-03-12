@@ -1,0 +1,28 @@
+{
+  "annotations": {
+    "changelogDate": "20240312110016"
+  },
+  "applications": "*",
+  "entityTableName": "conformite",
+  "fields": [
+    {
+      "fieldName": "affichage",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "lienBonita",
+      "fieldType": "String"
+    }
+  ],
+  "name": "Conformite",
+  "relationships": [
+    {
+      "otherEntityName": "parametrage",
+      "otherEntityRelationshipName": "conformite",
+      "relationshipName": "parametrage",
+      "relationshipSide": "right",
+      "relationshipType": "one-to-many"
+    }
+  ],
+  "searchEngine": "no"
+}

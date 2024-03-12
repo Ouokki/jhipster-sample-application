@@ -1,0 +1,25 @@
+{
+  "jhipsterSampleApplicationApp": {
+    "tpe": {
+      "home": {
+        "title": "Tpes",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Tpe",
+        "createOrEditLabel": "Create or edit a Tpe",
+        "notFound": "No Tpes found"
+      },
+      "created": "A new Tpe is created with identifier {{ param }}",
+      "updated": "A Tpe is updated with identifier {{ param }}",
+      "deleted": "A Tpe is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Tpe {{ id }}?"
+      },
+      "detail": {
+        "title": "Tpe"
+      },
+      "id": "ID",
+      "imageTpe": "Image Tpe",
+      "descriptif": "Descriptif"
+    }
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "jhipsterSampleApplicationApp": {
+    "autreFrais": {
+      "home": {
+        "title": "Autre Frais",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Autre Frais",
+        "createOrEditLabel": "Create or edit a Autre Frais",
+        "notFound": "No Autre Frais found"
+      },
+      "created": "A new Autre Frais is created with identifier {{ param }}",
+      "updated": "A Autre Frais is updated with identifier {{ param }}",
+      "deleted": "A Autre Frais is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Autre Frais {{ id }}?"
+      },
+      "detail": {
+        "title": "Autre Frais"
+      },
+      "id": "ID",
+      "domaineFrais": "Domaine Frais"
+    }
+  }
+}

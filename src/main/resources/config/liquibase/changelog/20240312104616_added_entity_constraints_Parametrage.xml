@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
+    <!--
+        Added the constraints for entity Parametrage.
+    -->
+    <changeSet id="20240312104616-2" author="jhipster">
+
+        <addForeignKeyConstraint baseColumnNames="garantie_id"
+                                 baseTableName="parametrage"
+                                 constraintName="fk_parametrage__garantie_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="garantie"
+                                 />
+
+        <addForeignKeyConstraint baseColumnNames="demande_id"
+                                 baseTableName="parametrage"
+                                 constraintName="fk_parametrage__demande_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="demande"
+                                 />
+
+        <addForeignKeyConstraint baseColumnNames="tarif_commercant_id"
+                                 baseTableName="parametrage"
+                                 constraintName="fk_parametrage__tarif_commercant_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="tarif_commercant"
+                                 />
+
+        <addForeignKeyConstraint baseColumnNames="option_produit_commerces_id"
+                                 baseTableName="parametrage"
+                                 constraintName="fk_parametrage__option_produit_commerces_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="option_produit_commerces"
+                                 />
+
+        <addForeignKeyConstraint baseColumnNames="conformite_id"
+                                 baseTableName="parametrage"
+                                 constraintName="fk_parametrage__conformite_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="conformite"
+                                 />
+    </changeSet>
+</databaseChangeLog>

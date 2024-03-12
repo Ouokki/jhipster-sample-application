@@ -1,0 +1,5 @@
+export enum DomaineFrais {
+  SOUSCRIPTION = 'SOUSCRIPTION',
+
+  MODIFICATION = 'MODIFICATION',
+}

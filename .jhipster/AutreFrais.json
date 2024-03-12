@@ -1,0 +1,17 @@
+{
+  "annotations": {
+    "changelogDate": "20240312105616"
+  },
+  "applications": "*",
+  "entityTableName": "autre_frais",
+  "fields": [
+    {
+      "fieldName": "domaineFrais",
+      "fieldType": "DomaineFrais",
+      "fieldValues": "SOUSCRIPTION,MODIFICATION"
+    }
+  ],
+  "name": "AutreFrais",
+  "relationships": [],
+  "searchEngine": "no"
+}

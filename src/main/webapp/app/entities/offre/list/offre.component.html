@@ -1,0 +1,110 @@
+<div>
+  <h2 id="page-heading" data-cy="OffreHeading">
+    <span jhiTranslate="jhipsterSampleApplicationApp.offre.home.title">Offres</span>
+
+    <div class="d-flex justify-content-end">
+      <button class="btn btn-info me-2" (click)="load()" [disabled]="isLoading">
+        <fa-icon icon="sync" [spin]="isLoading"></fa-icon>
+        <span jhiTranslate="jhipsterSampleApplicationApp.offre.home.refreshListLabel">Refresh list</span>
+      </button>
+
+      <button
+        id="jh-create-entity"
+        data-cy="entityCreateButton"
+        class="btn btn-primary jh-create-entity create-offre"
+        [routerLink]="['/offre/new']"
+      >
+        <fa-icon icon="plus"></fa-icon>
+        <span jhiTranslate="jhipsterSampleApplicationApp.offre.home.createLabel">Create a new Offre</span>
+      </button>
+    </div>
+  </h2>
+
+  <jhi-alert-error></jhi-alert-error>
+
+  <jhi-alert></jhi-alert>
+
+  @if (offres?.length === 0) {
+    <div class="alert alert-warning" id="no-result">
+      <span jhiTranslate="jhipsterSampleApplicationApp.offre.home.notFound">No Offres found</span>
+    </div>
+  }
+
+  @if (offres && offres.length > 0) {
+    <div class="table-responsive table-entities" id="entities">
+      <table class="table table-striped" aria-describedby="page-heading">
+        <thead>
+          <tr jhiSort [(predicate)]="predicate" [(ascending)]="ascending" (sortChange)="navigateToWithComponentValues()">
+            <th scope="col" jhiSortBy="id">
+              <div class="d-flex">
+                <span jhiTranslate="global.field.id">ID</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="codeOffre">
+              <div class="d-flex">
+                <span jhiTranslate="jhipsterSampleApplicationApp.offre.codeOffre">Code Offre</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="libelleOffre">
+              <div class="d-flex">
+                <span jhiTranslate="jhipsterSampleApplicationApp.offre.libelleOffre">Libelle Offre</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="referenceEchangeAVEM">
+              <div class="d-flex">
+                <span jhiTranslate="jhipsterSampleApplicationApp.offre.referenceEchangeAVEM">Reference Echange AVEM</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="referenceEchangeCAPS">
+              <div class="d-flex">
+                <span jhiTranslate="jhipsterSampleApplicationApp.offre.referenceEchangeCAPS">Reference Echange CAPS</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col"></th>
+          </tr>
+        </thead>
+        <tbody>
+          @for (offre of offres; track trackId) {
+            <tr data-cy="entityTable">
+              <td>
+                <a [routerLink]="['/offre', offre.id, 'view']">{{ offre.id }}</a>
+              </td>
+              <td>{{ offre.codeOffre }}</td>
+              <td>{{ offre.libelleOffre }}</td>
+              <td>{{ offre.referenceEchangeAVEM }}</td>
+              <td>{{ offre.referenceEchangeCAPS }}</td>
+              <td class="text-end">
+                <div class="btn-group">
+                  <a [routerLink]="['/offre', offre.id, 'view']" class="btn btn-info btn-sm" data-cy="entityDetailsButton">
+                    <fa-icon icon="eye"></fa-icon>
+                    <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                  </a>
+
+                  <a [routerLink]="['/offre', offre.id, 'edit']" class="btn btn-primary btn-sm" data-cy="entityEditButton">
+                    <fa-icon icon="pencil-alt"></fa-icon>
+                    <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                  </a>
+
+                  <button type="submit" (click)="delete(offre)" class="btn btn-danger btn-sm" data-cy="entityDeleteButton">
+                    <fa-icon icon="times"></fa-icon>
+                    <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                  </button>
+                </div>
+              </td>
+            </tr>
+          }
+        </tbody>
+      </table>
+    </div>
+  }
+</div>
