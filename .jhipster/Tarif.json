@@ -1,0 +1,43 @@
+{
+  "annotations": {
+    "changelogDate": "20240312105216"
+  },
+  "applications": "*",
+  "entityTableName": "tarif",
+  "fields": [
+    {
+      "fieldName": "tarifParDefaut",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "tarifMinimum",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "tarifMaximum",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "unite",
+      "fieldType": "String"
+    }
+  ],
+  "name": "Tarif",
+  "relationships": [
+    {
+      "otherEntityName": "tarifCommercant",
+      "otherEntityRelationshipName": "tarif",
+      "relationshipName": "tarifCommercant",
+      "relationshipSide": "right",
+      "relationshipType": "one-to-one"
+    },
+    {
+      "otherEntityName": "optionProduitCommerces",
+      "otherEntityRelationshipName": "tarif",
+      "relationshipName": "optionProduitCommerces",
+      "relationshipSide": "right",
+      "relationshipType": "one-to-one"
+    }
+  ],
+  "searchEngine": "no"
+}

@@ -1,0 +1,28 @@
+{
+  "annotations": {
+    "changelogDate": "20240312105816"
+  },
+  "applications": "*",
+  "entityTableName": "reference_option_produit_commerces",
+  "fields": [
+    {
+      "fieldName": "codeOptionProduit",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "libelleOptionProduit",
+      "fieldType": "String"
+    }
+  ],
+  "name": "ReferenceOptionProduitCommerces",
+  "relationships": [
+    {
+      "otherEntityName": "tarifReferenceOption",
+      "otherEntityRelationshipName": "referenceOptionProduitCommerces",
+      "relationshipName": "tarifReferenceOption",
+      "relationshipSide": "right",
+      "relationshipType": "many-to-many"
+    }
+  ],
+  "searchEngine": "no"
+}

@@ -1,0 +1,46 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    @if (cR) {
+      <div>
+        <h2 data-cy="cRDetailsHeading"><span jhiTranslate="jhipsterSampleApplicationApp.cR.detail.title">CR</span></h2>
+
+        <hr />
+
+        <jhi-alert-error></jhi-alert-error>
+
+        <jhi-alert></jhi-alert>
+
+        <dl class="row-md jh-entity-details">
+          <dt><span jhiTranslate="global.field.id">ID</span></dt>
+          <dd>
+            <span>{{ cR.id }}</span>
+          </dd>
+          <dt><span jhiTranslate="jhipsterSampleApplicationApp.cR.isAvem">Is Avem</span></dt>
+          <dd>
+            <span>{{ cR.isAvem }}</span>
+          </dd>
+          <dt><span jhiTranslate="jhipsterSampleApplicationApp.cR.isAmex">Is Amex</span></dt>
+          <dd>
+            <span>{{ cR.isAmex }}</span>
+          </dd>
+          <dt><span jhiTranslate="jhipsterSampleApplicationApp.cR.referentielCR">Referentiel CR</span></dt>
+          <dd>
+            @if (cR.referentielCR) {
+              <div>
+                <a [routerLink]="['/referentiel-cr', cR.referentielCR.id, 'view']">{{ cR.referentielCR.id }}</a>
+              </div>
+            }
+          </dd>
+        </dl>
+
+        <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+          <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+        </button>
+
+        <button type="button" [routerLink]="['/cr', cR.id, 'edit']" class="btn btn-primary">
+          <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+        </button>
+      </div>
+    }
+  </div>
+</div>

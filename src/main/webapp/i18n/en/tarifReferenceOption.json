@@ -1,0 +1,26 @@
+{
+  "jhipsterSampleApplicationApp": {
+    "tarifReferenceOption": {
+      "home": {
+        "title": "Tarif Reference Options",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Tarif Reference Option",
+        "createOrEditLabel": "Create or edit a Tarif Reference Option",
+        "notFound": "No Tarif Reference Options found"
+      },
+      "created": "A new Tarif Reference Option is created with identifier {{ param }}",
+      "updated": "A Tarif Reference Option is updated with identifier {{ param }}",
+      "deleted": "A Tarif Reference Option is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Tarif Reference Option {{ id }}?"
+      },
+      "detail": {
+        "title": "Tarif Reference Option"
+      },
+      "id": "ID",
+      "trigramme": "Trigramme",
+      "referenceOptionProduitCommerces": "Reference Option Produit Commerces",
+      "optionProduitCommerces": "Option Produit Commerces"
+    }
+  }
+}

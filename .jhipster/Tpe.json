@@ -1,0 +1,20 @@
+{
+  "annotations": {
+    "changelogDate": "20240312110116"
+  },
+  "applications": "*",
+  "entityTableName": "tpe",
+  "fields": [
+    {
+      "fieldName": "imageTpe",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "descriptif",
+      "fieldType": "String"
+    }
+  ],
+  "name": "Tpe",
+  "relationships": [],
+  "searchEngine": "no"
+}

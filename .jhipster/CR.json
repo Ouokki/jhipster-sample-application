@@ -1,0 +1,35 @@
+{
+  "annotations": {
+    "changelogDate": "20240312104516"
+  },
+  "applications": "*",
+  "entityTableName": "cr",
+  "fields": [
+    {
+      "fieldName": "isAvem",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "isAmex",
+      "fieldType": "Boolean"
+    }
+  ],
+  "name": "CR",
+  "relationships": [
+    {
+      "otherEntityName": "offreProduit",
+      "otherEntityRelationshipName": "cr",
+      "relationshipName": "offreProduit",
+      "relationshipSide": "left",
+      "relationshipType": "one-to-many"
+    },
+    {
+      "otherEntityName": "referentielCR",
+      "otherEntityRelationshipName": "cr",
+      "relationshipName": "referentielCR",
+      "relationshipSide": "right",
+      "relationshipType": "many-to-one"
+    }
+  ],
+  "searchEngine": "no"
+}

@@ -1,0 +1,35 @@
+{
+  "annotations": {
+    "changelogDate": "20240312104316"
+  },
+  "applications": "*",
+  "entityTableName": "demande",
+  "fields": [
+    {
+      "fieldName": "dateDemande",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "validiation",
+      "fieldType": "Boolean"
+    }
+  ],
+  "name": "Demande",
+  "relationships": [
+    {
+      "otherEntityName": "histModifDemande",
+      "otherEntityRelationshipName": "demande",
+      "relationshipName": "histModifDemande",
+      "relationshipSide": "left",
+      "relationshipType": "one-to-many"
+    },
+    {
+      "otherEntityName": "parametrage",
+      "otherEntityRelationshipName": "demande",
+      "relationshipName": "parametrage",
+      "relationshipSide": "right",
+      "relationshipType": "one-to-one"
+    }
+  ],
+  "searchEngine": "no"
+}
