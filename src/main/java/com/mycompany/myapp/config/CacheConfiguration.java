@@ -48,6 +48,35 @@ public class CacheConfiguration {
             createCache(cm, com.mycompany.myapp.domain.User.class.getName());
             createCache(cm, com.mycompany.myapp.domain.Authority.class.getName());
             createCache(cm, com.mycompany.myapp.domain.User.class.getName() + ".authorities");
+            createCache(cm, com.mycompany.myapp.domain.ReferentielCR.class.getName());
+            createCache(cm, com.mycompany.myapp.domain.ReferentielCR.class.getName() + ".crs");
+            createCache(cm, com.mycompany.myapp.domain.Demande.class.getName());
+            createCache(cm, com.mycompany.myapp.domain.Demande.class.getName() + ".histModifDemandes");
+            createCache(cm, com.mycompany.myapp.domain.HistModifDemande.class.getName());
+            createCache(cm, com.mycompany.myapp.domain.CR.class.getName());
+            createCache(cm, com.mycompany.myapp.domain.CR.class.getName() + ".offreProduits");
+            createCache(cm, com.mycompany.myapp.domain.Parametrage.class.getName());
+            createCache(cm, com.mycompany.myapp.domain.Parametrage.class.getName() + ".tarifCommercants");
+            createCache(cm, com.mycompany.myapp.domain.Parametrage.class.getName() + ".optionProduitCommerces");
+            createCache(cm, com.mycompany.myapp.domain.Offre.class.getName());
+            createCache(cm, com.mycompany.myapp.domain.Offre.class.getName() + ".offreProduits");
+            createCache(cm, com.mycompany.myapp.domain.Produit.class.getName());
+            createCache(cm, com.mycompany.myapp.domain.Produit.class.getName() + ".offreProduits");
+            createCache(cm, com.mycompany.myapp.domain.OffreProduit.class.getName());
+            createCache(cm, com.mycompany.myapp.domain.Garantie.class.getName());
+            createCache(cm, com.mycompany.myapp.domain.TarifCommercant.class.getName());
+            createCache(cm, com.mycompany.myapp.domain.Tarif.class.getName());
+            createCache(cm, com.mycompany.myapp.domain.Logiciel.class.getName());
+            createCache(cm, com.mycompany.myapp.domain.Fdo.class.getName());
+            createCache(cm, com.mycompany.myapp.domain.Option.class.getName());
+            createCache(cm, com.mycompany.myapp.domain.AutreFrais.class.getName());
+            createCache(cm, com.mycompany.myapp.domain.OptionProduitCommerces.class.getName());
+            createCache(cm, com.mycompany.myapp.domain.ReferenceOptionProduitCommerces.class.getName());
+            createCache(cm, com.mycompany.myapp.domain.ReferenceOptionProduitCommerces.class.getName() + ".tarifReferenceOptions");
+            createCache(cm, com.mycompany.myapp.domain.TarifReferenceOption.class.getName());
+            createCache(cm, com.mycompany.myapp.domain.TarifReferenceOption.class.getName() + ".referenceOptionProduitCommerces");
+            createCache(cm, com.mycompany.myapp.domain.Conformite.class.getName());
+            createCache(cm, com.mycompany.myapp.domain.Tpe.class.getName());
             // jhipster-needle-ehcache-add-entry
         };
     }

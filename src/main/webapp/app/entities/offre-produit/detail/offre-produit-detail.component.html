@@ -1,0 +1,80 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    @if (offreProduit) {
+      <div>
+        <h2 data-cy="offreProduitDetailsHeading">
+          <span jhiTranslate="jhipsterSampleApplicationApp.offreProduit.detail.title">Offre Produit</span>
+        </h2>
+
+        <hr />
+
+        <jhi-alert-error></jhi-alert-error>
+
+        <jhi-alert></jhi-alert>
+
+        <dl class="row-md jh-entity-details">
+          <dt><span jhiTranslate="global.field.id">ID</span></dt>
+          <dd>
+            <span>{{ offreProduit.id }}</span>
+          </dd>
+          <dt><span jhiTranslate="jhipsterSampleApplicationApp.offreProduit.activeProd">Active Prod</span></dt>
+          <dd>
+            <span>{{ offreProduit.activeProd }}</span>
+          </dd>
+          <dt><span jhiTranslate="jhipsterSampleApplicationApp.offreProduit.activeNEHOM">Active NEHOM</span></dt>
+          <dd>
+            <span>{{ offreProduit.activeNEHOM }}</span>
+          </dd>
+          <dt><span jhiTranslate="jhipsterSampleApplicationApp.offreProduit.activeVMOA">Active VMOA</span></dt>
+          <dd>
+            <span>{{ offreProduit.activeVMOA }}</span>
+          </dd>
+          <dt><span jhiTranslate="jhipsterSampleApplicationApp.offreProduit.activeDEVTU">Active DEVTU</span></dt>
+          <dd>
+            <span>{{ offreProduit.activeDEVTU }}</span>
+          </dd>
+          <dt><span jhiTranslate="jhipsterSampleApplicationApp.offreProduit.parametrage">Parametrage</span></dt>
+          <dd>
+            @if (offreProduit.parametrage) {
+              <div>
+                <a [routerLink]="['/parametrage', offreProduit.parametrage.id, 'view']">{{ offreProduit.parametrage.id }}</a>
+              </div>
+            }
+          </dd>
+          <dt><span jhiTranslate="jhipsterSampleApplicationApp.offreProduit.cr">Cr</span></dt>
+          <dd>
+            @if (offreProduit.cr) {
+              <div>
+                <a [routerLink]="['/cr', offreProduit.cr.id, 'view']">{{ offreProduit.cr.id }}</a>
+              </div>
+            }
+          </dd>
+          <dt><span jhiTranslate="jhipsterSampleApplicationApp.offreProduit.offre">Offre</span></dt>
+          <dd>
+            @if (offreProduit.offre) {
+              <div>
+                <a [routerLink]="['/offre', offreProduit.offre.id, 'view']">{{ offreProduit.offre.id }}</a>
+              </div>
+            }
+          </dd>
+          <dt><span jhiTranslate="jhipsterSampleApplicationApp.offreProduit.produit">Produit</span></dt>
+          <dd>
+            @if (offreProduit.produit) {
+              <div>
+                <a [routerLink]="['/produit', offreProduit.produit.id, 'view']">{{ offreProduit.produit.id }}</a>
+              </div>
+            }
+          </dd>
+        </dl>
+
+        <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+          <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+        </button>
+
+        <button type="button" [routerLink]="['/offre-produit', offreProduit.id, 'edit']" class="btn btn-primary">
+          <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+        </button>
+      </div>
+    }
+  </div>
+</div>

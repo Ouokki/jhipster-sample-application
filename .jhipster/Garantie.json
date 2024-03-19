@@ -1,0 +1,36 @@
+{
+  "annotations": {
+    "changelogDate": "20240312105016"
+  },
+  "applications": "*",
+  "entityTableName": "garantie",
+  "fields": [
+    {
+      "fieldName": "montantAutorisationTransaction",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "montantAutorisationTPE",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "delaiRemise",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "delaiCommunicationJustificatif",
+      "fieldType": "String"
+    }
+  ],
+  "name": "Garantie",
+  "relationships": [
+    {
+      "otherEntityName": "parametrage",
+      "otherEntityRelationshipName": "garantie",
+      "relationshipName": "parametrage",
+      "relationshipSide": "right",
+      "relationshipType": "one-to-one"
+    }
+  ],
+  "searchEngine": "no"
+}

@@ -1,0 +1,31 @@
+{
+  "annotations": {
+    "changelogDate": "20240312105916"
+  },
+  "applications": "*",
+  "entityTableName": "tarif_reference_option",
+  "fields": [
+    {
+      "fieldName": "trigramme",
+      "fieldType": "String"
+    }
+  ],
+  "name": "TarifReferenceOption",
+  "relationships": [
+    {
+      "otherEntityName": "referenceOptionProduitCommerces",
+      "otherEntityRelationshipName": "tarifReferenceOption",
+      "relationshipName": "referenceOptionProduitCommerces",
+      "relationshipSide": "left",
+      "relationshipType": "many-to-many"
+    },
+    {
+      "otherEntityName": "optionProduitCommerces",
+      "otherEntityRelationshipName": "tarifReferenceOption",
+      "relationshipName": "optionProduitCommerces",
+      "relationshipSide": "right",
+      "relationshipType": "one-to-one"
+    }
+  ],
+  "searchEngine": "no"
+}

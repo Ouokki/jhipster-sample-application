@@ -1,0 +1,57 @@
+{
+  "annotations": {
+    "changelogDate": "20240312104916"
+  },
+  "applications": "*",
+  "entityTableName": "offre_produit",
+  "fields": [
+    {
+      "fieldName": "activeProd",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "activeNEHOM",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "activeVMOA",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "activeDEVTU",
+      "fieldType": "Boolean"
+    }
+  ],
+  "name": "OffreProduit",
+  "relationships": [
+    {
+      "otherEntityName": "parametrage",
+      "otherEntityRelationshipName": "offreProduit",
+      "relationshipName": "parametrage",
+      "relationshipSide": "left",
+      "relationshipType": "one-to-one"
+    },
+    {
+      "otherEntityName": "cR",
+      "otherEntityRelationshipName": "offreProduit",
+      "relationshipName": "cr",
+      "relationshipSide": "right",
+      "relationshipType": "many-to-one"
+    },
+    {
+      "otherEntityName": "offre",
+      "otherEntityRelationshipName": "offreProduit",
+      "relationshipName": "offre",
+      "relationshipSide": "right",
+      "relationshipType": "many-to-one"
+    },
+    {
+      "otherEntityName": "produit",
+      "otherEntityRelationshipName": "offreProduit",
+      "relationshipName": "produit",
+      "relationshipSide": "right",
+      "relationshipType": "many-to-one"
+    }
+  ],
+  "searchEngine": "no"
+}

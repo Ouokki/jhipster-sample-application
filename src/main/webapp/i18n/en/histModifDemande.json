@@ -1,0 +1,27 @@
+{
+  "jhipsterSampleApplicationApp": {
+    "histModifDemande": {
+      "home": {
+        "title": "Hist Modif Demandes",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Hist Modif Demande",
+        "createOrEditLabel": "Create or edit a Hist Modif Demande",
+        "notFound": "No Hist Modif Demandes found"
+      },
+      "created": "A new Hist Modif Demande is created with identifier {{ param }}",
+      "updated": "A Hist Modif Demande is updated with identifier {{ param }}",
+      "deleted": "A Hist Modif Demande is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Hist Modif Demande {{ id }}?"
+      },
+      "detail": {
+        "title": "Hist Modif Demande"
+      },
+      "id": "ID",
+      "dateModification": "Date Modification",
+      "typeModification": "Type Modification",
+      "detailsModifications": "Details Modifications",
+      "demande": "Demande"
+    }
+  }
+}

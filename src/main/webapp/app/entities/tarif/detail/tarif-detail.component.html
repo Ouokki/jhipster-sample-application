@@ -1,0 +1,46 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    @if (tarif) {
+      <div>
+        <h2 data-cy="tarifDetailsHeading"><span jhiTranslate="jhipsterSampleApplicationApp.tarif.detail.title">Tarif</span></h2>
+
+        <hr />
+
+        <jhi-alert-error></jhi-alert-error>
+
+        <jhi-alert></jhi-alert>
+
+        <dl class="row-md jh-entity-details">
+          <dt><span jhiTranslate="global.field.id">ID</span></dt>
+          <dd>
+            <span>{{ tarif.id }}</span>
+          </dd>
+          <dt><span jhiTranslate="jhipsterSampleApplicationApp.tarif.tarifParDefaut">Tarif Par Defaut</span></dt>
+          <dd>
+            <span>{{ tarif.tarifParDefaut }}</span>
+          </dd>
+          <dt><span jhiTranslate="jhipsterSampleApplicationApp.tarif.tarifMinimum">Tarif Minimum</span></dt>
+          <dd>
+            <span>{{ tarif.tarifMinimum }}</span>
+          </dd>
+          <dt><span jhiTranslate="jhipsterSampleApplicationApp.tarif.tarifMaximum">Tarif Maximum</span></dt>
+          <dd>
+            <span>{{ tarif.tarifMaximum }}</span>
+          </dd>
+          <dt><span jhiTranslate="jhipsterSampleApplicationApp.tarif.unite">Unite</span></dt>
+          <dd>
+            <span>{{ tarif.unite }}</span>
+          </dd>
+        </dl>
+
+        <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+          <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+        </button>
+
+        <button type="button" [routerLink]="['/tarif', tarif.id, 'edit']" class="btn btn-primary">
+          <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+        </button>
+      </div>
+    }
+  </div>
+</div>

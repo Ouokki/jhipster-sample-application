@@ -1,0 +1,138 @@
+
+
+entity ReferentielCR{
+  nomCR String
+  numeroCR String,
+}
+entity Demande{
+  dateDemande Instant
+  validiation Boolean
+}
+
+entity HistModifDemande{
+  dateModification Instant,
+  typeModification String,
+  detailsModifications String, //Json
+}
+
+entity CR {
+  isAvem Boolean,
+  isAmex Boolean
+}
+
+
+entity Parametrage {
+
+}
+
+entity Offre{
+  codeOffre String,
+  libelleOffre String,
+  referenceEchangeAVEM String,
+  referenceEchangeCAPS String
+}
+
+entity Produit{
+  codeProduit String,
+  libelleProduit String,
+}
+
+entity OffreProduit {
+  activeProd Boolean
+  activeNEHOM Boolean,
+  activeVMOA Boolean,
+  activeDEVTU Boolean
+}
+
+entity Garantie {
+  montantAutorisationTransaction String,
+  montantAutorisationTPE String,
+  delaiRemise String,
+  delaiCommunicationJustificatif String
+}
+
+entity TarifCommercant {
+  nomCommission String
+  typeCommission TypeCommissionCommercant
+  champMatrice String
+}
+
+enum TypeCommissionCommercant {
+  FORFAIT, GRILLE
+}
+
+entity Tarif {
+  tarifParDefaut String,
+  tarifMinimum String,
+  tarifMaximum String,
+  unite String
+}
+
+entity Logiciel {
+  parDefault Boolean
+}
+
+entity Fdo {
+}
+
+entity Option {
+}
+
+enum DomaineFrais {
+  SOUSCRIPTION, MODIFICATION
+}
+
+entity AutreFrais {
+  domaineFrais DomaineFrais
+}
+
+entity OptionProduitCommerces {
+
+}
+
+entity ReferenceOptionProduitCommerces {
+  codeOptionProduit String,
+  libelleOptionProduit String,
+}
+
+entity TarifReferenceOption {
+  trigramme String
+}
+
+
+
+entity Conformite {
+  affichage Boolean,
+  lienBonita String
+}
+
+entity Tpe {
+  imageTpe String,
+  descriptif String
+}
+
+relationship OneToMany{
+  ReferentielCR{cr} to CR{referentielCR}
+  CR{offreProduit} to OffreProduit{cr}  
+  Demande{HistModifDemande} to HistModifDemande{Demande}
+  Parametrage{tarifCommercant} to TarifCommercant{parametrage}
+  Parametrage{optionProduitCommerces} to OptionProduitCommerces{parametrage}
+  Offre{offreProduit} to OffreProduit{offre}  
+  Produit{offreProduit} to OffreProduit{produit}
+}
+
+relationship ManyToMany{
+ 
+  TarifReferenceOption{referenceOptionProduitCommerces} to ReferenceOptionProduitCommerces{tarifReferenceOption}
+
+}
+relationship OneToOne{
+  OffreProduit{parametrage} to Parametrage{offreProduit}
+  Parametrage{garantie} to Garantie{parametrage}
+  TarifCommercant{tarif} to Tarif{tarifCommercant}
+  OptionProduitCommerces{tarifReferenceOption} to TarifReferenceOption{optionProduitCommerces}
+  OptionProduitCommerces{tarif} to Tarif{optionProduitCommerces}  
+  Parametrage{demande} to Demande{parametrage}
+  Parametrage{conformite} to Conformite{parametrage}
+
+}

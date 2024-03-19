@@ -1,0 +1,36 @@
+{
+  "annotations": {
+    "changelogDate": "20240312104716"
+  },
+  "applications": "*",
+  "entityTableName": "offre",
+  "fields": [
+    {
+      "fieldName": "codeOffre",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "libelleOffre",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "referenceEchangeAVEM",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "referenceEchangeCAPS",
+      "fieldType": "String"
+    }
+  ],
+  "name": "Offre",
+  "relationships": [
+    {
+      "otherEntityName": "offreProduit",
+      "otherEntityRelationshipName": "offre",
+      "relationshipName": "offreProduit",
+      "relationshipSide": "left",
+      "relationshipType": "one-to-many"
+    }
+  ],
+  "searchEngine": "no"
+}

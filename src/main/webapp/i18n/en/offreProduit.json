@@ -1,0 +1,31 @@
+{
+  "jhipsterSampleApplicationApp": {
+    "offreProduit": {
+      "home": {
+        "title": "Offre Produits",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Offre Produit",
+        "createOrEditLabel": "Create or edit a Offre Produit",
+        "notFound": "No Offre Produits found"
+      },
+      "created": "A new Offre Produit is created with identifier {{ param }}",
+      "updated": "A Offre Produit is updated with identifier {{ param }}",
+      "deleted": "A Offre Produit is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Offre Produit {{ id }}?"
+      },
+      "detail": {
+        "title": "Offre Produit"
+      },
+      "id": "ID",
+      "activeProd": "Active Prod",
+      "activeNEHOM": "Active NEHOM",
+      "activeVMOA": "Active VMOA",
+      "activeDEVTU": "Active DEVTU",
+      "parametrage": "Parametrage",
+      "cr": "Cr",
+      "offre": "Offre",
+      "produit": "Produit"
+    }
+  }
+}
